@@ -7,7 +7,7 @@ const Header = () => {
     Auth.logout();
   };
 
-  const user = Auth.getProfile();
+  const user = Auth.getUsername();
 
   return (
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
