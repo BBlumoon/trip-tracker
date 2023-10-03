@@ -24,32 +24,32 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-mutation Mutation($location: String!, $departure: String!) {
-  addThought(location: $location, departure: $departure) {
-    _id
-    location
-    departure
-  }
-}
-`;
-
-export const UPDATE_THOUGHT = gql`
-  mutation updateThought($thoughtId: ID!, $location: String!, $departure: String!) {
-    updateThought(thoughtId: $thoughtId, location: $location, departure: $departure) {
+export const ADD_DESTINATION = gql`
+  mutation addDestination($destinationText: String!) {
+    addDestination(destinationText: $destinationText) {
       _id
-      location
-      departure
+      presentLocation
+      destination
     }
   }
 `;
 
-export const REMOVE_THOUGHT = gql`
-  mutation removeThought($thoughtId: ID!) {
-    removeThought(thoughtId: $thoughtId) {
+export const UPDATE_DESTINATION = gql`
+  mutation updateDestination($destinationId: ID!, $destinationText: String!) {
+    updateDestination(destinationId: $destinationId, destinationText: $destinationText) {
       _id
-      location
-      departure
+      presentLocation
+      destination
+    }
+  }
+`;
+
+export const REMOVE_DESTINATION = gql`
+  mutation removeDestination($destinationId: ID!) {
+    removeDestination(destinationId: $destinationId) {
+      _id
+      presentLocation
+      destination
     }
   }
 `;
